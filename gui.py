@@ -1,8 +1,9 @@
 # Imports
 from tkinter.filedialog import *
-from guizero import *
+from libraries.guizero import *
 from tkinter import filedialog
-import keyboard
+from libraries import keyboard
+print("finished importing libraries")
 themeType = 0
 # Opens .TXT, .SAV (only loger studios compiled savs and .LST)
 def openFile():
@@ -18,7 +19,7 @@ def openFile():
         # Close the file
     else:
         app.info("loger File editor", "Action Canceled")
-# Saves .LST
+    print("Open file")
 def saveAs():
     files = [('loger script Text Document', '*.lst'),
              ('Text Document', '*.txt'),
@@ -27,39 +28,18 @@ def saveAs():
     if file:  # user selected file
         with open(file, 'w') as f:
             f.write(inputBox.value)
+            fd = open(file, "r")
+            d = fd.read()
+            fd.close()
+            m = d.split("\n")
+            s = "\n".join(m[:-1])
+            fd = open(file, "w+")
+            for i in range(len(s)):
+                fd.write(s[i])
+            fd.close()
     else:  # user cancel the file browser window
         app.info("loger File editor", "Action Canceled")
-    fd = open(file, "r")
-    d = fd.read()
-    fd.close()
-    m = d.split("\n")
-    s = "\n".join(m[:-1])
-    fd = open(file, "w+")
-    for i in range(len(s)):
-        fd.write(s[i])
-    fd.close()
-def saveAsTxt():
-    global inputBox
-    files = [('Text Document', '*.txt'),
-             ('loger script Text Document', '*.lst'),
-             ('All Files', '*.*')
-             ]
-    file = filedialog.asksaveasfilename(
-        filetypes=files, defaultextension=".txt", initialdir='projects', title="Save As - loger file editor")
-    if file:  # user selected file
-        with open(file, 'w') as f:
-            f.write(inputBox.value)
-    else:  # user cancel the file browser window
-        app.info("loger File editor", "Action Canceled")
-    fd = open(file, "r")
-    d = fd.read()
-    fd.close()
-    m = d.split("\n")
-    s = "\n".join(m[:-1])
-    fd = open(file, "w+")
-    for i in range(len(s)):
-        fd.write(s[i])
-    fd.close()
+    print("Save file")
 def newFile():
     files = [('All Files', '*.*'),
              ('loger script Text Document', '*.lst'),
@@ -70,6 +50,7 @@ def newFile():
         fob.close()
     else:  # user cancel the file browser window
         app.info("loger File editor", "Action Canceled")
+    print("New file")
 def close():
     closeT = app.yesno("loger File editor", "Are you sure you want to quit? All unsaved progress will be lost.")
     if closeT:
@@ -77,12 +58,14 @@ def close():
         app.destroy()
 def fontColor():
     inputBox.text_color = app.select_color(color='Black')
-# It's not done yet 😤
+    print("Font color window opened")
 def comingSoon():
     app.info("loger File editor", "This feature is still a work in progress.")
+    print("It's not done yet 😤")  # It's not done yet 😤
 # ----------------------------------------------------------
 def adConfig():
     configAd = Window(app, title="Settings - loger File editor", width=400, height=300, layout="grid")
+    print("Opened adv config")
     # Config gui for advanced menu
     def formatSel():
         inputBox.text_bold = bold.value
@@ -90,6 +73,7 @@ def adConfig():
         inputBox.text_underline = underline.value
         inputBox.text_size = sizeSel.value
         inputBox.font = font.value
+        print("Updated all font values")
     def resetFont():
         bold.value = 0
         italix.value = 0
@@ -101,16 +85,18 @@ def adConfig():
             inputBox.text_color = "White"
         font.value = "Courier New"
         formatSel()
+        print("Reset all font values")
     def theme():
         global themeType
-        if theme.value == "Default Light":
+        if themeSel.value == "Default Light":
             inputBox.text_color = None
             app.bg = None
             app.text_color = None
             themeType = 0
-        elif theme.value == "Midnight":
+            print("set theme to default light")
+        elif themeSel.value == "Midnight":
             # open the sample file used
-            file = open('themes/midnight.theme')
+            file = open('assets/themes/midnight.theme')
             # read the content of the file opened
             content = file.readlines()
             inputBox.text_color = content[0]
@@ -118,9 +104,10 @@ def adConfig():
             app.text_color = content[2]
             themeType = int(content[3])
             inputBox.bg = content[4]
-        elif theme.value == "Default Dark":
+            print("set theme to midnight")
+        elif themeSel.value == "Default Dark":
             # open the sample file used
-            file = open('themes/defaultDark.theme')
+            file = open('assets/themes/defaultDark.theme')
             # read the content of the file opened
             content = file.readlines()
             inputBox.text_color = content[0]
@@ -128,9 +115,10 @@ def adConfig():
             app.text_color = content[2]
             themeType = int(content[3])
             inputBox.bg = content[4]
-        elif theme.value == "Cool light":
+            print("set theme to default dark")
+        elif themeSel.value == "Cool light":
             # open the sample file used
-            file = open('themes/blueLight.theme')
+            file = open('assets/themes/blueLight.theme')
             # read the content of the file opened
             content = file.readlines()
             inputBox.text_color = content[0]
@@ -138,6 +126,12 @@ def adConfig():
             app.text_color = content[2]
             themeType = int(content[3])
             inputBox.bg = content[4]
+            print("set theme to cool light")
+        else:
+            print("HOW!?")
+    def resetTheme():
+        themeSel.value = "Default Light"
+        theme()
     # Settings Wind:
     formatLabel = TitleBox(configAd, text='Font options', grid=[1,1])  # Font options
     bold = CheckBox(formatLabel, text='Bold', command=formatSel)
@@ -148,36 +142,39 @@ def adConfig():
     sizeSel = Slider(formatLabel, start=9, end=16, command=formatSel)
     sizeSel.value = 11
     Text(formatLabel, text="--Font--")
-    font = Combo(formatLabel, command=formatSel, options=["Courier New", "Cascadia Code", "Symbol", "Times New Roman", "Webdings", "Wingdings", "Yu Gothic"])
+    font = Combo(formatLabel, command=formatSel, options=["Courier New", "Cascadia Code", "ilium", "Symbol",
+                                                          "Times New Roman", "Webdings", "Wingdings", "Yu Gothic"])
     PushButton(formatLabel, text="Reset", command=resetFont)
     themeLabel = TitleBox(configAd, text="Theme options", grid=[2,1])  # Theme Options
     Text(themeLabel, text="--Theme--")
-    theme = Combo(themeLabel, command=theme, options=["Default Light", "Default Dark",
+    themeSel = Combo(themeLabel, command=theme, options=["Default Light", "Default Dark",
     "Midnight", "Cool light"])
-
+    PushButton(themeLabel, text="Reset", command=resetTheme)
 def textWrap():
     if inputBox.wrap:
         inputBox.wrap = False
     else:
         inputBox.wrap = True
+    print("Toggled text wrap")
+def curserPOS():
+    curserPOSV.value = "loger File Editor | " + inputBox.cursor_position
 # Main Gui code
 app = App(title="loger File editor", layout="center", width=800, height=600)
-inputBox = TextBox(app, width="fill", height="fill", multiline=True)
+inputBox = TextBox(app, width="fill", height="fill", multiline=True, command=curserPOS)
 inputBox.text_size = 11
-Text(app, text="loger File Editor")
+curserPOSV = Text(app, text="")
 menubar = MenuBar(app,
                   toplevel=["File", "Edit", "Tools"],
                   options=[
-                      [["New", newFile], ["Open", openFile], ["Save as", saveAs], ["Save as TXT", saveAsTxt], ["Exit", close]],  #File
-                      [ ["Toggle text wrap", textWrap] ],  #Edit
+                      [["New", newFile], ["Open", openFile], ["Save as", saveAs], ["Exit", close]],  #File
+                      [["Toggle text wrap", textWrap]],  #Edit
                       [["Settings (Beta)", adConfig]]  #Tools
                     ])
 # Hotkeys
-keyboard.add_hotkey('ctrl + alt + t', adConfig)
 keyboard.add_hotkey('ctrl + n', newFile)
 keyboard.add_hotkey('ctrl + o', openFile)
 keyboard.add_hotkey('ctrl + s', saveAs)
-keyboard.add_hotkey('ctrl + shift + s', saveAsTxt)
 app.when_closed = close
 app.icon = "assets/ico.png"
+app.when_clicked=curserPOS
 app.display()
