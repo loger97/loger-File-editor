@@ -1,10 +1,10 @@
 To open the program:<br>
-    &emsp; 1. download and install any version of python 3 between 3.12-3.13<br>
+    &emsp;1. download and install any version of python 3 between 3.12-3.13<br>
     &emsp;2. install the [illium.ttf] font<br>
     &emsp;3. install guizero to your home dir.<br>
     &emsp;4. open [loger_file_editor.py] on the desktop or in a terminal<br>
 	&emsp; &emsp;a.if a terminal window opens too, check to see if the debug flag is enabled in [runtimeOptions.properties]<br>
-    &emsp;4. your saves are in [projects\]<br>
+    &emsp;5. your saves are in [projects\]<br>
 <br>
 To modify in any way:<br>
      &emsp;1. go to the github repo and fork the project.<br>
