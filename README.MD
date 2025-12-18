@@ -3,7 +3,7 @@ To open the program:<br>
     &emsp;2. install the [illium.ttf] font<br>
     &emsp;3. install guizero to your home dir.<br>
     &emsp;4. open [loger_file_editor.py] on the desktop or in a terminal<br>
-	&emsp; &emsp;a.if a terminal window opens too, check to see if the debug flag is enabled in [runtimeOptions.properties]<br>
+	&emsp; &emsp;a. if a terminal window opens too, check to see if the debug flag is enabled in [runtimeOptions.properties]<br>
     &emsp;5. your saves are in [projects\]<br>
 <br>
 To modify in any way:<br>
