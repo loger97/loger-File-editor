@@ -15,5 +15,5 @@ The code is in [gui.py] All depenceies other than python and guizero are include
 <br>
 **ERRORS** **MAY** **OCCUR** **IN AN** **IDE** **DUE** **TO** **PROJECT** **CONFIG** **OPTIONS**. **FOR** **USE** **OF** **SOFTWARE** **OUTSIDE** **A** **DEV** **ENVIROMENT** **RUN** **WITH** **ABOVE** **INSTRUCTIONS**!<br>
 <br>
-Hopefully it works.<br>
+Hopefully it works because I have no idea what I'm doing.<br>
 <br>
