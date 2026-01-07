@@ -12,7 +12,7 @@ To install the program:
      a. If a terminal window opens too, check to see if the debug flag is enabled in        `runtimeOptions.properties` it will look like this `debug = TRUE` set it      to `debug = FALSE`
 
 The code is in `gui.py`. All dependencies other than Python are included and located in `scr/libraries/`. All themes are in `[scr/assets/themes/]` along with other images.<br>
-**ERRORS MAY OCCUR IN AN IDE DUE TO PROJECT CONFIG OPTIONS. FOR USE OF SOFTWARE OUTSIDE A DEV ENVIROMENT RUN WITH ABOVE INSTRUCTIONS!**
+**ERRORS MAY OCCUR IN AN IDE DUE TO PROJECT CONFIG OPTIONS. FOR USE OF SOFTWARE OUTSIDE A DEV ENVIROMENT RUN WITH ABOVE INSTRUCTIONS!**<br>
 Hopefully it works because I have no idea what I'm doing.
 ## Supported Versions of loger file editor & Python
 
