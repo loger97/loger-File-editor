@@ -1,5 +1,5 @@
-<h1>loger File editor
-<br>
+<h1>loger File editor<br>
+
 loger File editor is a Python program for editing files.
 It is easy to make addons for too. (more plugin functionalty is comming)
 
