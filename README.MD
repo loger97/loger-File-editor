@@ -9,7 +9,9 @@ To install the program:
  1. Download and install any supported version of Python 3
  2. Install the `illium.ttf` font (optional)
  3. open `loger_file_editor.py` on the desktop or in a terminal
-     a. If a terminal window opens too, check to see if the debug flag is enabled in        `runtimeOptions.properties` it will look like this `debug = TRUE` set it      to `debug = FALSE`
+     - If a terminal window opens too, check to see if the debug flag is
+       enabled in        `runtimeOptions.properties` it will look like
+       this `debug = TRUE` set it      to `debug = FALSE`
 
 The code is in `gui.py`. All dependencies other than Python are included and located in `scr/libraries/`. All themes are in `[scr/assets/themes/]` along with other images.<br>
 **ERRORS MAY OCCUR IN AN IDE DUE TO PROJECT CONFIG OPTIONS. FOR USE OF SOFTWARE OUTSIDE A DEV ENVIROMENT RUN WITH ABOVE INSTRUCTIONS!**<br>
@@ -19,7 +21,7 @@ Hopefully it works because I have no idea what I'm doing.
 Versions of loger file editor that you can open an issue on.
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.0     | :x:
+| 2.0     | :warning:          |
 | 1.0     | :white_check_mark: |
 | P.R.    | :warning:          |
 | Beta    | :x:                |
