@@ -1,14 +1,10 @@
 <h1>loger File editor
-
+<br>
 loger File editor is a Python program for editing files.
 It is easy to make addons for too. (more plugin functionalty is comming)
 
-> [theme: defualt dark]
-
-> [theme: hot dog stand (inspierd from windows 3.1)]
-
 <h2> Install and running
-
+<br>
 To install the program:
     &emsp;1. Download and install any supported version of Python 3
     &emsp;2. Install the `illium.ttf` font (optional)
@@ -18,8 +14,9 @@ To install the program:
 The code is in `gui.py`. All dependencies other than Python are included and located in `scr/libraries/`. All themes are in `[scr/assets/themes/]` along with other images.<br>
 **ERRORS MAY OCCUR IN AN IDE DUE TO PROJECT CONFIG OPTIONS. FOR USE OF SOFTWARE OUTSIDE A DEV ENVIROMENT RUN WITH ABOVE INSTRUCTIONS!**<br>
 Hopefully it works because I have no idea what I'm doing.
-<h2>Supported Versions of loger file editor & Python
 
+<h2>Supported Versions of loger file editor & Python
+<br>
 Versions of loger file editor that you can open an issue on.
 | Version | Supported          |
 | ------- | ------------------ |
@@ -28,7 +25,7 @@ Versions of loger file editor that you can open an issue on.
 | Beta    | :x:                |
 | Alpha   | :x:                |
 <h2> Versions of Python that work with loger File editor.
-
+<br>
 | Version | Supported          |
 | ------- | ------------------ |
 | ≥ 3.15  | :x:                |
