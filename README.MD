@@ -18,7 +18,7 @@ To install the program:
 
 The code is in `gui.py`. All dependencies, except Python, are included and located in `scr/libraries/`. All themes are in `scr/assets/themes/` along with other images.<br>
 **ERRORS MAY OCCUR IN AN IDE DUE TO PROJECT CONFIG OPTIONS. FOR USE OF SOFTWARE OUTSIDE A DEV ENVIRONMENT RUN WITH ABOVE INSTRUCTIONS!**<br>
-## Goal
+## Goals
 The goal of loger File editor was to have a customizable file editor, but it has morphed into a tool for working with some strange file formats. 
 Our goals include:
  - Making a file editor that can work with weird custom formats
